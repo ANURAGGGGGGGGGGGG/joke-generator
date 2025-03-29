@@ -45,7 +45,14 @@ const JokeGenerator = () => {
                 disabled={isLoading}
                 aria-label={isLoading ? 'Loading joke' : 'Get new joke'}
             >
-                {isLoading ? 'Loading...' : 'Tell Me a Joke!'}
+                {isLoading ? (
+                    <>
+                        <span className="loading-spinner"></span>
+                        Loading...
+                    </>
+                ) : (
+                    'Tell Me a Joke!'
+                )}
             </button>
 
             {error && (
@@ -54,20 +61,24 @@ const JokeGenerator = () => {
 
             {joke && !error && (
                 <div className='joke-container'>
-                    {/* Handle different joke types */}
                     {joke.type === 'twopart' ? (
                         <>
                             <p className='setup'>{joke.setup}</p>
-                            {showPunchline ? (
-                                <p className='delivery'>🎉 {joke.delivery}</p>
-                            ) : (
-                                <button 
-                                    className='reveal-btn'
-                                    onClick={revealPunchline}
-                                >
-                                    Show Punchline
-                                </button>
-                            )}
+                            <div className="punchline-wrapper">
+                                {showPunchline ? (
+                                    <p className='delivery'>🎉 {joke.delivery}</p>
+                                ) : (
+                                    <button 
+                                        className='reveal-btn'
+                                        onClick={revealPunchline}
+                                        aria-label="Reveal punchline"
+                                    >
+                                        <span className="btn-icon">👇</span>
+                                        <span className="btn-text">Show Punchline</span>
+                                        <span className="hover-effect"></span>
+                                    </button>
+                                )}
+                            </div>
                         </>
                     ) : (
                         <p className='joke'>🎭 {joke.joke}</p>
