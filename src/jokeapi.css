@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,17 +7,11 @@
 
 :root {
     --primary-color: #2563eb;
-    /* Bold blue */
     --secondary-color: #3b82f6;
-    /* Medium blue */
     --accent-color: #60a5fa;
-    /* Light blue */
     --background-color: #f8fafc;
-    /* Off-white */
     --text-color: #1e293b;
-    /* Dark blue-gray */
     --error-color: #dc2626;
-    /* Red for errors */
 }
 
 body {
@@ -32,7 +24,6 @@ body {
     line-height: 1.5;
 }
 
-/* Container Styles */
 .container {
     background: white;
     border-radius: 20px;
@@ -52,7 +43,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* Title Styling */
 .title {
     font-size: 2rem;
     font-weight: 700;
@@ -73,7 +63,6 @@ body {
     background-color: var(--accent-color);
 }
 
-/* Modern Button Design */
 .generate-btn {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -127,7 +116,6 @@ body {
     background: #94a3b8;
 }
 
-/* Loading spinner */
 @keyframes spin {
     to {
         transform: rotate(360deg);
@@ -144,7 +132,6 @@ body {
     animation: spin 1s ease-in-out infinite;
 }
 
-/* Joke Text Styling */
 .joke-container {
     background: var(--background-color);
     border-radius: 12px;
@@ -174,7 +161,6 @@ body {
     border-radius: 8px;
 }
 
-/* Error Styling */
 .error {
     color: var(--error-color);
     background: rgba(220, 38, 38, 0.05);
@@ -269,7 +255,6 @@ body {
     animation: spin 1s linear infinite;
 }
 
-/* Responsive Design */
 @media (max-width: 640px) {
     .container {
         padding: 1.5rem;
